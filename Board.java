@@ -74,7 +74,7 @@ class Board {
     public ArrayList<Move> possibleMoves() {
         ArrayList<Move> possibleMoves = new ArrayList<Move>();
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) {
+            for (int j = 0; j < board[i].length; j++) {
                 if (board[i][j] == Mark.EMPTY) {
                     possibleMoves.add(new Move(i, j));
                 }

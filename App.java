@@ -29,7 +29,6 @@ public class App {
         } while (!choice.equals("X") && !choice.equals("O"));
 
         CPUPlayer cpu = new CPUPlayer(playerMark == Mark.X ? Mark.O : Mark.X);
-        CPUPlayer player = new CPUPlayer(playerMark);
         int turn = 0;
         Mark currentMark;
 
@@ -53,18 +52,14 @@ public class App {
                 break;
             }
             if (playerMark == currentMark) {
-                // System.out.println("VOTRE TOUR!");
-                // System.out.print("Quelle rangée ? (1,2,3) : ");
-                // int row = input.nextInt() - 1;
+                System.out.println("VOTRE TOUR!");
+                System.out.print("Quelle rangée ? (1,2,3) : ");
+                int row = input.nextInt() - 1;
 
-                // System.out.print("Quelle Colonne ? (1,2,3) : ");
-                // int column = input.nextInt() - 1;
+                System.out.print("Quelle Colonne ? (1,2,3) : ");
+                int column = input.nextInt() - 1;
 
-                // move = new Move(row, column);
-
-                // ArrayList<Move> possibleMoves = player.getNextMoveMinMax(board);
-                ArrayList<Move> possibleMoves = player.getNextMoveAB(board);
-                move = possibleMoves.get(rng.nextInt(possibleMoves.size()));
+                move = new Move(row, column);
             } else {
                 System.out.println("TOUR DE L'ORDINATEUR!");
                 // ArrayList<Move> possibleMoves = cpu.getNextMoveMinMax(board);

@@ -60,7 +60,7 @@ class CPUPlayer {
         for (Move move : board.possibleMoves()) {
             Board child = board.copy();
             child.play(move, mark);
-            int score = alphaBeta(child, false, best, Integer.MAX_VALUE);
+            int score = alphaBeta(child, false, Integer.MIN_VALUE, Integer.MAX_VALUE);
 
             if (score > best) {
                 best = score;
@@ -114,7 +114,7 @@ class CPUPlayer {
             } else {
                 beta = Math.min(beta, childScore);
             }
-            if (alpha>beta) {
+            if (alpha>=beta) {
                 break;
             }
         }
