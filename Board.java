@@ -47,6 +47,7 @@ class Board {
     /**
      * Looks for any 3 consecutive instance of the specified mark (i.e if it has
      * won)
+     * Since we have a set board with only 8 possible win conditions, a long return works efficiently
      *
      * @param mark
      * @return
